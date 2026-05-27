@@ -1,18 +1,18 @@
 """
 =====================================================
 PROJETO: MercaSys
-ARQUIVO: views.py
+ARQUIVO: urls.py
 STATUS: EM DESENVOLVIMENTO
 =====================================================
 
 OBJETIVO:
-Controlar autenticação e páginas de usuários.
+Gerenciar URLs do app de usuários.
 =====================================================
 """
 
-from django.shortcuts import render
+from django.urls import path
+from . import views
 
-
-def login_view(request):
-
-    return render(request, 'usuarios/login.html')
+urlpatterns = [
+    path('login/', views.login_view, name='login'),
+]
