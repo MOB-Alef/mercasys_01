@@ -1,0 +1,17 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+
+<h1>
+    Dashboard
+</h1>
+
+<p>
+    Usuário autenticado com sucesso.
+</p>
+
+<a href="{% url 'logout' %}" class="btn btn-danger">
+    Logout
+</a>
+
+{% endblock %}

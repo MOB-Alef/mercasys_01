@@ -11,32 +11,60 @@ Template base principal do sistema.
 
 FUNCIONALIDADES:
 [✔] Estrutura HTML
+[✔] Bootstrap
+[✔] Sistema de mensagens
 [ ] Navbar
 [ ] Sidebar
 [ ] Responsividade
 
 PRÓXIMOS PASSOS:
 - Adicionar menu
-- Adicionar Bootstrap
 - Criar layout administrativo
+- Melhorar interface
 
 =====================================================
 -->
 
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>MercaSys</title>
 
     <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+
 </head>
+
 <body>
 
     <div class="container mt-5">
+
+        <!-- Mensagens do sistema -->
+
+        {% if messages %}
+
+            {% for message in messages %}
+
+                <div class="alert alert-{{ message.tags }}">
+
+                    {{ message }}
+
+                </div>
+
+            {% endfor %}
+
+        {% endif %}
+
+        <!-- Conteúdo das páginas -->
 
         {% block content %}
 
@@ -45,4 +73,5 @@ PRÓXIMOS PASSOS:
     </div>
 
 </body>
+
 </html>
